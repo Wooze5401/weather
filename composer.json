@@ -1,0 +1,21 @@
+{
+    "name": "woo/weather",
+   
+    "autoload": {
+        "psr-4": {
+            "Woo\\Weather\\": "./src"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "phpunit/phpunit": "^7.5",
+        "mockery/mockery": "^1.2"
+    },
+    "extra" : {
+        "laravel": {
+            "providers": [
+                "Woo\\Weather\\ServiceProvider"
+            ]
+        }
+    }
+}
