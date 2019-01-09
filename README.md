@@ -2,7 +2,7 @@
 
 <p align="center"> A Weather SDK.</p>
 
-
+![styleCi build](https://github.styleci.io/repos/164789480/shield)
 ## Installing
 
 ```shell
