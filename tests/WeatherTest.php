@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the overtrue/weather.
+ *
+ * (c) wooze
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE
+ */
+
 namespace Woo\Weather\Tests;
 
 use GuzzleHttp\Client;
@@ -13,7 +22,6 @@ use Woo\Weather\Weather;
 
 class WeatherTest extends TestCase
 {
-
     public function testGetWeatherWithInvalidType()
     {
         $w = new Weather('mock-key');
@@ -46,7 +54,7 @@ class WeatherTest extends TestCase
                 'city' => '深圳',
                 'output' => 'json',
                 'extensions' => 'base',
-            ]
+            ],
         ])->andReturn($response);
 
         // 将 `getHttpClient` 方法替换为上面创建的 http client 为返回值的模拟方法。

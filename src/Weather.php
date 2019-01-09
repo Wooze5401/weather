@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the overtrue/weather.
+ *
+ * (c) wooze
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE
+ */
+
 namespace Woo\Weather;
 
 use GuzzleHttp\Client;
@@ -9,6 +18,7 @@ use Woo\Weather\Exceptions\InvalidArgumentException;
 class Weather
 {
     protected $key;
+
     protected $guzzleOptions = [];
 
     public function __construct(string $key)
@@ -47,7 +57,7 @@ class Weather
 
         try {
             $response = $this->getHttpClient()->get($url, [
-                'query' => $query
+                'query' => $query,
             ])->getBody()->getContents();
 
             return 'json' === $format ? \json_decode($response, true) : $response;
