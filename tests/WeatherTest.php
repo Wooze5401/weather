@@ -22,15 +22,15 @@ use Woo\Weather\Weather;
 
 class WeatherTest extends TestCase
 {
-    public function testGetWeatherWithInvalidType()
-    {
-        $w = new Weather('mock-key');
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid type value(base/all): foo');
-        $w->getWeather('深圳', 'foo');
-        $this->fail('Failed to assert getWeather throw exception with invalid argument.');
-    }
+//    public function testGetWeatherWithInvalidType()
+//    {
+//        $w = new Weather('mock-key');
+//
+//        $this->expectException(InvalidArgumentException::class);
+//        $this->expectExceptionMessage('Invalid type value(base/all): foo');
+//        $w->getWeather('深圳', 'foo');
+//        $this->fail('Failed to assert getWeather throw exception with invalid argument.');
+//    }
 
     public function testGetWeatherWithInvalidFormat()
     {
@@ -38,7 +38,7 @@ class WeatherTest extends TestCase
 
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid response format: array');
-        $w->getWeather('深圳', 'base', 'array');
+        $w->getLiveWeather('深圳', 'array');
 
         $this->fail('Failed to assert getWeather throw exception with invalid argument.');
     }
@@ -114,4 +114,12 @@ class WeatherTest extends TestCase
 
         $this->assertSame(500, $w->getHttpClient()->getConfig('timeout'));
     }
+
+//    public function testGetLiveWeather()
+//    {
+//        $w = \Mockery::mock(Weather::class, ['mock-key'])->makePartial();
+//        $w->expects()->getLiveWeather('深圳')->andReturn(['success' => true]);
+//
+//        $this->assertSame(['success' => true], $w->getLiveWeather('深圳'));
+//    }
 }
