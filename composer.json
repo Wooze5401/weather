@@ -1,5 +1,5 @@
 {
-    "name": "woo/weather",
+    "name": "wooze/weather",
    
     "autoload": {
         "psr-4": {
